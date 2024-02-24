@@ -72,19 +72,17 @@ body{
     background: transparent;
     padding-top: 50px;
 }
-#rain-icon{
+#weatherIcon{
     width: 48px;
     background: transparent;
 }
 .temp{
     background: transparent;
-    /* make sure to update this when you find how
-    to make inheritance work in this */
+  
 }
 .city{
     background: transparent;
-    /* make sure to update this when you find how
-    to make inheritance work in this */
+
 }
 .details{
     display: flex;

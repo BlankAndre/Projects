@@ -18,19 +18,18 @@
             <i id="searchIcon" class="bi bi-search"></i>
         </div>
         <div class="weather">
-            <i id="rain-icon" class="bi bi-cloud-drizzle"></i>
-            <h1 class="temp">17</h1>
-            <h2 class="city">Lisboa</h2>
+            <i id="weatherIcon" class="bi bi-cloud-drizzle"></i>
+            <h1 class="temp"></h1>
+            <h2 class="city"></h2>
             <div class="details">
                 <div class="col">
-                    <!-- nao esquecer fazer isto tar lado a lado e nao em cima usa flexbox -->
                     <p id="Humidity">Humidity</p>
-                    <p class="humidity">50</p>
+                    <p class="humidity"></p>
                     <i id="bi-moisture" class="bi bi-moisture"></i>
                 </div>
                 <div class="col">
                     <p id="Wind">Wind</p>
-                    <p class="wind">4</p>
+                    <p class="wind"></p>
                      <i id="bi-wind" class="bi bi-wind"></i>
                 </div>
 
@@ -47,6 +46,7 @@
         const searchBox = document.querySelector(".search input");
         const searchButton = document.getElementById("searchIcon")
         
+        
         async function checkWeather(city){
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
             const data = await response.json();
@@ -57,7 +57,23 @@
             document.querySelector(".temp").innerHTML =Math.round(data.main.temp) + "°C";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = data.wind.speed + "Km/h";
-        }
+
+            if (data.weather[0].main === "Clouds"){
+                weatherIcon.className = "bi bi-cloud";
+            }
+            if (data.weather[0].main === "Clear"){
+                weatherIcon.className = "bi bi-brightness-high";
+            }
+            if (data.weather[0].main === "Rain"){
+                weatherIcon.className = "bi bi-cloud-rain-heavy"
+            }
+            if (data.weather[0].main === "Drizzle"){
+                weatherIcon.className = "bi bi-cloud-drizzle";
+            }
+            if (data.weather[0].main === "Thunderstorm"){
+                weatherIcon.className = "bi bi-lightning";
+            }   
+    }
         searchButton.addEventListener( "click", ()=>{
             checkWeather(searchBox.value);
             console.log(searchBox.value);
