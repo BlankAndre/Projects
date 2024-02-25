@@ -17,6 +17,9 @@
             <input type="text" placeholder="Type the city name here" spellcheck="false"> 
             <i id="searchIcon" class="bi bi-search"></i>
         </div>
+        <div class="error">
+            <p>Error: City not found!</p>
+        </div>
         <div class="weather">
             <i id="weatherIcon" class="bi bi-cloud-drizzle"></i>
             <h1 class="temp"></h1>
@@ -71,12 +74,21 @@
                 weatherIcon.className = "bi bi-cloud-drizzle";
             }
             if (data.weather[0].main === "Thunderstorm"){
-                weatherIcon.className = "bi bi-lightning";
+                weatherIcon .className = "bi bi-lightning";
             }   
-    }
+
+            document.querySelector(".weather").style.display = "block";
+    };
         searchButton.addEventListener( "click", ()=>{
             checkWeather(searchBox.value);
             console.log(searchBox.value);
+        });
+
+        searchBox.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                checkWeather(searchBox.value);
+                console.log(searchBox.value);
+            }
         });
         
     </script>

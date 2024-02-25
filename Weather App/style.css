@@ -65,7 +65,15 @@ body{
     width: 1em;
     height: 1em;
 }
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 18px;
+    background-color: #a7e0e5;
+}
+
 .weather{
+    display: none;
     text-align: center;
     align-items: center;
     font-size: 30px;
