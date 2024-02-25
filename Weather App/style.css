@@ -1,7 +1,6 @@
 *{
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    background-color: white;
     font: bold;
 }
 
@@ -12,7 +11,7 @@ body{
     height: 100vh;
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
-    background-color: lightcyan;
+    background-color: #2b2b2b;
 }
 
 .card {
@@ -69,7 +68,7 @@ body{
     text-align: left;
     margin-left: 10px;
     font-size: 18px;
-    background-color: #a7e0e5;
+    display: none;
 }
 
 .weather{
