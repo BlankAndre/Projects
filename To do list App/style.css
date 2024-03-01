@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(140deg, #ba55d3, #9370db);
+    padding: 10px;
+}
+.todolist{
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    margin: 100px auto 40px;
+    padding: 40px 30px 40px 30px;
+    border-radius: 20px;
+}
+.todolist h2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+h2 img{
+    width: 30px;
+    height:50px;
+    margin-left: 10px;
+}
+.inputrow{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+}
+#inputbox{
+    flex: 1;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 20px;
+    padding: 10px;
+}
+button{
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    background: #FF5733;
+    font-size: 18px;
+    padding: 10px;
+}
+ul li{
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    padding: 10px 10px 10px 30px;
+    position: relative;
+    word-wrap: break-word;
+}
+ul li::before {
+    content: url(images/circle.svg);
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+    background-position: center;
+    background-size: cover; 
+    top: 8px;
+    left: 10px;
+}
+ul li.checked{
+    color: gray;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    content: url(images/circle-fill.svg); 
+    font-size: 20px;
+}
+#delete-button{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin: 0px 10px 10px 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    border-radius: 20%;
+}
+#delete-button:hover{
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+
+}
+#list-container{
+    overflow: auto;
+    max-height: 300px;
+}
